@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Job Finder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='sty.css') }}">
+  <script src="{{ url_for('static', filename='js/ind.js') }}" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.PNG') }}" alt="Logo">
+      <span class="brand"><big>Fake Job</big><span class="highlight"><big> Finder</big></span></span>
+    </div>
+    <nav>
+      <a href="{{ url_for('ind') }}">Home</a>
+      <a href="{{ url_for('signup') }}" >log in</a>
+</nav>
+
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about">
+    <h2>About us</h2>
+    <p>
+      We aim to build awareness and provide insights into detecting fake job postings
+      using cutting-edge machine learning algorithms.
+      <br>
+       @ COPYRIGHTS 2025 
+    </p>
+  </section>
+
+ 
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-y: scroll; /* ✅ Make scrollable */
+}
+
+/* Header */
+header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 50px;
+  width: 75px;
+}
+
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.highlight {
+  color: red;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+nav a.active::after,
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -2px;
+  background: black;
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  height: 750px;
+  display: block;
+}
+
+/* Upload section */
+.upload-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.upload-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #1e3d73;
+  display: inline-block;
+  padding: 5px 20px;
+}
+
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background: linear-gradient(#1e3d73, #16325c); /* gradient for depth */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 6px #0f223f;  /* ✅ bottom shadow creates 3D */
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(#224080, #1a345f);
+}
+
+button:active {
+  box-shadow: 0 2px #0f223f; /* ✅ shadow shrinks on press */
+  transform: translateY(4px); /* ✅ button presses down */
+}
+

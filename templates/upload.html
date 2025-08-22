@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Dataset</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+  <script src="{{ url_for('static', filename='js/upload.js') }}" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.PNG') }}" alt="Logo">
+      <span class="brand">Fake Job <span class="highlight">Finder</span></span>
+    </div>
+    <nav>
+      <a href="{{ url_for('upload') }}" class="active">Upload</a>
+    </nav>
+  </header>
+
+  <!-- Centered Main Section -->
+  <div class="background">
+    <div class="overlay">
+  <main class="upload-center">
+    <div class="upload-box">
+      <h2>📤 Upload your CSV file</h2>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="flash">{{ messages[0] }}</div>
+        {% endif %}
+      {% endwith %}
+
+      <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  </main>
+</div>
+    </div>
+</body>
+</html>
+

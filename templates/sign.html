@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Job Finder - Log In</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+  <script src="{{ url_for('static', filename='js/sign.js') }}" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.PNG') }}" alt="Logo">
+      <span class="brand"><big>Fake Job</big><span class="highlight"><big> Finder</big></span></span>
+    </div>
+    <nav>
+      <a href="{{ url_for('ind') }}">Home</a>
+      <a href="{{ url_for('signup') }}" class="active">Log in</a>
+      <a href="{{ url_for('upload') }}" id="uploadNav">Upload</a>
+    </nav>
+  </header>
+
+  <!-- BACKGROUND IMAGE -->
+  <div class="background">
+    <div class="overlay">
+      <!-- LOGIN FORM -->
+      <div class="login-box">
+        <h2>Log In</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <input type="email" id="email" placeholder="Email">
+        <button id="loginBtn">Log In</button>
+        <button id="signupBtn">Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

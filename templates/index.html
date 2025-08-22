@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Job Detection</title>
+  <!-- ✅ Flask static linking -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.PNG') }}" alt="Logo">
+      <span class="brand"><big>Fake Job </big><span class="highlight"><big> Finder</big></span></span>
+    </div>
+    <nav class="nav">
+      <a href="/index" class="nav-item"><big>Prediction</big></a>
+      <div class="dropdown">
+        <button>More ▾</button>
+        <div class="dropdown-content">
+          <a href="/perf">Performance Dashboard</a>
+          <a href="/charts" class="active">Charts</a>
+          <a href="/info">More Info</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN FORM -->
+  <div class="container">
+    <h2>Job Prediction Form</h2>
+    <form action="/predict" method="POST">
+      <label>Job Title:</label>
+      <input type="text" name="title" required>
+
+      <label>Company Profile:</label>
+      <textarea name="company_profile" rows="3" required></textarea>
+
+      <label>Job Description:</label>
+      <textarea name="description" rows="5" required></textarea>
+
+      <label>Requirements:</label>
+      <textarea name="requirements" rows="4"></textarea>
+
+      <label>Benefits:</label>
+      <textarea name="benefits" rows="3"></textarea>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    <!-- RESULT BOX -->
+    {% if result %}
+    <div class="result-box">
+      <h3>Prediction Result:</h3>
+      <p><strong>{{ result }}</strong></p>
+      <h4>🔎 Input Summary</h4>
+      <ul>
+        <li><b>Job Title:</b> {{ title }}</li>
+        <li><b>Company:</b> {{ company }}</li>
+        <li><b>Description:</b> {{ description }}</li>
+        <li><b>Requirements:</b> {{ requirements }}</li>
+        <li><b>Benefits:</b> {{ benefits }}</li>
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

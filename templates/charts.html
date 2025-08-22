@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Job Detection - Charts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='charts.css') }}">
+  <!-- ✅ Correct Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.PNG') }}" alt="Logo">
+      <span class="brand"><big>Fake Job </big><span class="highlight"><big> Finder</big></span></span>
+    </div>
+    <nav class="nav">
+      <a href="/index" class="nav-item">Prediction</a>
+      <div class="dropdown">
+        <button>More ▾</button>
+        <div class="dropdown-content">
+          <a href="/perf">Performance Dashboard</a>
+          <a href="/charts" class="active">Charts</a>
+          <a href="/info">More Info</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>📊 Fake Job Detection - Model Performance</h1>
+    <div class="chart-container"><canvas id="cvChart"></canvas></div>
+    <div class="chart-container"><canvas id="timeChart"></canvas></div>
+    <div class="chart-container"><canvas id="accChart"></canvas></div>
+    <div class="chart-container"><canvas id="f1Chart"></canvas></div>
+  </main>
+
+  <!-- ✅ Pass backend metrics into JS -->
+  <script>
+    const metrics = {{ chart_data|safe }};
+  </script>
+
+  <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+</body>
+</html>

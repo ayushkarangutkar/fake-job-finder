@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Info - Fake Job Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='info.css') }}">
+  <script defer src="{{ url_for('static', filename='js/info.js') }}"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.PNG') }}" alt="Logo">
+      <span class="brand"><big>Fake Job </big><span class="highlight"><big> Finder</big></span></span>
+    </div>
+    <nav class="nav">
+      <a href="/index" class="nav-item">Prediction</a>
+      <div class="dropdown">
+        <button>More ▾</button>
+        <div class="dropdown-content">
+          <a href="/perf">Performance Dashboard</a>
+          <a href="/charts">Charts</a>
+          <a href="/info" class="active">More Info</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>📖 About This Project</h2>
+    <p>
+      This project is built to detect <b>fake job postings</b> using advanced Machine Learning models like 
+  <b>SVM</b>, <b>Extra Trees</b>, <b>Passive Aggressive</b>, and <b>XGBoost</b>.  
+  It analyzes different features such as job descriptions, company profiles, requirements, and metadata 
+  to identify suspicious or fraudulent job postings.  
+  The goal is to protect job seekers from scams, spam, and misleading advertisements that can result 
+  in wasted time or even financial loss.  
+  By leveraging both structured attributes and text-based data, the system achieves a balance between 
+  accuracy and efficiency.  
+  The interactive dashboard allows users to visualize model performance, compare training times, and 
+  evaluate metrics like Accuracy and F1 Score.  
+  This application demonstrates the practical use of data science to solve real-world problems in 
+  employment security and trust.
+    </p>
+
+    <h3>🔗 References</h3>
+<ul>
+  <li><a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn Documentation</a></li>
+  <li><a href="https://scikit-learn.org/stable/modules/svm.html" target="_blank">Support Vector Machines (SVM) - Scikit-learn</a></li>
+  <li><a href="https://xgboost.readthedocs.io/en/stable/" target="_blank">XGBoost Documentation</a></li>
+  <li><a href="https://scikit-learn.org/stable/modules/linear_model.html#passive-aggressive" target="_blank">Passive Aggressive Classifier - Scikit-learn</a></li>
+  <li><a href="https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees" target="_blank">Extra Trees Classifier - Scikit-learn</a></li>
+</ul>
+
+
+    <button id="downloadBtn"> Download Dataset</button>
+    <button id="downloadPdfBtn"> Download PDF</button>
+  </div>
+</body>
+</html>

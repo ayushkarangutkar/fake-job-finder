@@ -1,0 +1,124 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 50px;
+  width: 75px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.highlight {
+  color: red;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  transition: width 0.3s;
+}
+
+nav a.active::after,
+nav a:hover::after {
+  width: 100%;
+}
+
+
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url("h1.PNG") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 150px; /* to avoid overlap with fixed header */
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* About Section */
+.about {
+  background: #111;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.about p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
