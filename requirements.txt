@@ -4,7 +4,7 @@ pip>=25.2
 
 flask==2.3.3
 gunicorn==21.2.0
-pandas==2.2.2 --only-binary :all:
+pandas==2.1.4
 scikit-learn --only-binary :all:
 numpy --only-binary :all:
 xgboost==1.7.6 --only-binary :all:
